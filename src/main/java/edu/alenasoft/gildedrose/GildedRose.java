@@ -8,7 +8,7 @@ public class GildedRose {
   public static List<Item> items = new ArrayList<>();
 
   public static void main(String[] args) {
-
+      System.out.println("this is refacor branch");
     System.out.println("OMGHAI!");
 
     items.add(new Item("+5 Dexterity Vest", 10, 20));
@@ -22,7 +22,7 @@ public class GildedRose {
 
     System.out.println(items);
   }
-
+//este es la rama refactor
   public static void updateQuality() {
     for (int i = 0; i < items.size(); i++) {
       if ((!"Aged Brie".equals(items.get(i).getName()))
