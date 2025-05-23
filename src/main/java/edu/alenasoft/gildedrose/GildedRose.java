@@ -15,7 +15,7 @@ public class GildedRose {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 
-        CEquipment equipment = new CEquipment("+5 Dexterity Vest", 10, 20); 
+        CEquipment equipment = new CEquipment("+5 Dexterity Vest", 10, -20);
         CConsumable consumableElixir = new CConsumable("Elixir of the Mongoose", 5, 7);
         CConsumable consumableAgedBrie = new CConsumable("Aged Brie", 2, 0);
         CLegendaryItem legendaryItem = new CLegendaryItem("Sulfuras, Hand of Ragnaros", 0, 80);

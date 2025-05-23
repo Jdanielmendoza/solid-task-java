@@ -11,7 +11,7 @@ import edu.alenasoft.gildedrose.Item;
  *
  * @author jdani
  */
-public class CEquipment extends Item implements IItem{
+public class CEquipment extends Item implements IItem {
 
     public CEquipment(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -19,7 +19,9 @@ public class CEquipment extends Item implements IItem{
 
     @Override
     public void updateQuality() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (this.getQuality() > 0) {
+
+        }
     }
-    
+
 }

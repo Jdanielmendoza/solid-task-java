@@ -2,43 +2,52 @@ package edu.alenasoft.gildedrose;
 
 public class Item {
 
-  public String name;
-  public int sellIn;
-  public int quality;
+    private String name;
+    private int sellIn;
+    private int quality;
 
-  public Item(String name, int sellIn, int quality) {
-    this.setName(name);
-    this.setSellIn(sellIn);
-    this.setQuality(quality);
-  }
+    public Item(String name, int sellIn, int quality) {
+        if (quality < 0) {
+            throw new Error("El quality no puede ser negativo!");
+        } else {
+            this.setQuality(quality);
+        }
+        this.setName(name);
+        this.setSellIn(sellIn);
+        
+    }
 
-  /* Generated getter and setter code */
-  public String getName() {
-    return name;
-  }
+    /* Generated getter and setter code */
+    public String getName() {
+        return name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public int getSellIn() {
-    return sellIn;
-  }
+    public int getSellIn() {
+        return sellIn;
+    }
 
-  public void setSellIn(int sellIn) {
-    this.sellIn = sellIn;
-  }
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
+    }
 
-  public int getQuality() {
-    return quality;
-  }
+    public int getQuality() {
+        return quality;
+    }
 
-  public void setQuality(int quality) {
-    this.quality = quality;
-  }
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
 
-  @Override
-  public String toString() {
-    return "Item{" + "name='" + name + '\'' + ", sellIn=" + sellIn + ", quality=" + quality + '}';
-  }
+    public boolean isQualityNegative() {  //El Quality de un ítem nunca es un número negativo.
+        return this.quality < 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" + "name='" + name + '\'' + ", sellIn=" + sellIn + ", quality=" + quality + '}';
+    }
 }
