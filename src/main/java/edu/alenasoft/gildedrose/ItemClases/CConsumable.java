@@ -16,19 +16,19 @@ public class CConsumable extends Item implements IItem {// AGED BRIE ITEM
     public CConsumable(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
+    public CConsumable(CConsumable consumableObject) {
+        super(consumableObject);
+    }
 
     @Override
     public void updateQuality() {
         if (!this.isQualityNegative()) {//El quality no puede ser negativo!
-            this.setSellIn(this.getSellIn() - 1);
-            int aux = +1;
-            if(this.getSellIn()> 5 && this.getSellIn()<= 10) aux = +2; 
-            if(this.getSellIn()> 0 && this.getSellIn()<= 5) aux = +3; 
             if(this.getQuality() <= 50){
-                this.setQuality(this.getQuality() + aux);
+                this.setQuality(this.getQuality() + 1);
             }else{
                 this.setQuality(50);
             }
+            this.setSellIn(this.getSellIn() - 1);
         }
     }
 

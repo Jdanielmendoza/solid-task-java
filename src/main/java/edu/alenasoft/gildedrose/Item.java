@@ -16,6 +16,16 @@ public class Item {
         this.setSellIn(sellIn);
         
     }
+    public Item(Item newItem) {
+        if (newItem.getQuality() < 0) {
+            throw new Error("El quality no puede ser negativo!");
+        } else {
+            this.setQuality(newItem.getQuality());
+        }
+        this.setName(newItem.getName());
+        this.setSellIn(newItem.getSellIn());
+        
+    }
 
     /* Generated getter and setter code */
     public String getName() {
@@ -48,6 +58,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "name='" + name + '\'' + ", sellIn=" + sellIn + ", quality=" + quality + '}';
+        return "Item{" + "name='" + name + '\'' + ", sellIn=" + sellIn + ", quality=" + quality + '}' + "\n";
     }
 }
